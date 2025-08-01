@@ -28,7 +28,8 @@ public class CalculatorTest {
     @CsvSource({
             "-20, -10, -30",
             "20, -10, 10",
-            "20,-20, 0"
+            "20, 20, 40",
+            "20, 0, 20"
     })
     @DisplayName("Проверка метода сложения разными аргументами")
     public void testSum(int a, int b, int actual) {
@@ -45,7 +46,7 @@ public class CalculatorTest {
     @CsvSource({
             "-25, -10, -15",
             "20, -10, 30",
-            "20,-20, 40",
+            "20, 20, 0",
             "-20, 0, -20"
     })
     @DisplayName("Проверка метода вычетание разными аргументами")
