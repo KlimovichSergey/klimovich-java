@@ -8,7 +8,7 @@ public class LoginTest extends BaseTest {
 
     @BeforeEach
     public void openHomePageClickCookieButtonLogin() {
-        HomePage homePage = new HomePage(driver);
+        HomePage homePage = new HomePage();
         homePage.openSite();
         homePage.clickAcceptCookie();
         homePage.clickPersonalLink();
@@ -16,14 +16,14 @@ public class LoginTest extends BaseTest {
 
     @Test
     public void test1() {
-        CabinetPage cabinetPage = new CabinetPage(driver);
+        CabinetPage cabinetPage = new CabinetPage();
 
         Assertions.assertEquals("Личный кабинет", cabinetPage.getHeadFormTitleText());
     }
 
     @Test
     public void test2() {
-        CabinetPage cabinetPage = new CabinetPage(driver);
+        CabinetPage cabinetPage = new CabinetPage();
         cabinetPage.clickButtonLogin();
 
         Assertions.assertEquals("Заполните это поле", cabinetPage.getUserLoginPopupErrorText());
@@ -33,7 +33,7 @@ public class LoginTest extends BaseTest {
 
     @Test
     public void test3() {
-        CabinetPage cabinetPage = new CabinetPage(driver);
+        CabinetPage cabinetPage = new CabinetPage();
         cabinetPage.sendKeysLogin("John Black");
         cabinetPage.clickButtonLogin();
 
@@ -42,7 +42,7 @@ public class LoginTest extends BaseTest {
 
     @Test
     public void test4() {
-        CabinetPage cabinetPage = new CabinetPage(driver);
+        CabinetPage cabinetPage = new CabinetPage();
         cabinetPage.sendKeysPassword("test_password");
         cabinetPage.clickButtonLogin();
 
@@ -51,7 +51,7 @@ public class LoginTest extends BaseTest {
 
     @Test
     public void test5() {
-        CabinetPage cabinetPage = new CabinetPage(driver);
+        CabinetPage cabinetPage = new CabinetPage();
         cabinetPage.sendKeysLogin("Test Login");
         cabinetPage.sendKeysPassword("1234567");
         cabinetPage.clickButtonLogin();
@@ -61,7 +61,7 @@ public class LoginTest extends BaseTest {
 
     @Test
     public void test6() {
-        CabinetPage cabinetPage = new CabinetPage(driver);
+        CabinetPage cabinetPage = new CabinetPage();
         cabinetPage.sendKeysPassword("1234");
         cabinetPage.clickButtonLogin();
 
@@ -70,7 +70,7 @@ public class LoginTest extends BaseTest {
 
     @Test
     public void test7() {
-        CabinetPage cabinetPage = new CabinetPage(driver);
+        CabinetPage cabinetPage = new CabinetPage();
         cabinetPage.clickButtonLogin();
 
         Assertions.assertEquals("Заполните это поле", cabinetPage.getUserLoginPopupErrorText());
@@ -80,7 +80,7 @@ public class LoginTest extends BaseTest {
 
     @Test
     public void test8() {
-        CabinetPage cabinetPage = new CabinetPage(driver);
+        CabinetPage cabinetPage = new CabinetPage();
         cabinetPage.clickButtonForgotPassword();
     }
 }
